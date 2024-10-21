@@ -15,54 +15,13 @@ export default function Home() {
     { title: "Donate", path: "/donate" },
     { title: "Contact Us", path: "/contact" }
   ];
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = setActiveTab(tabIndex);
 
   return (
     <>
-      {/* Navbar Section */}
-      <header className="w-full py-4 bg-blue-900 text-white">
-        <div className="container mx-auto flex justify-between items-center px-4">
-          <div>
-            <Link href="/">
-              <Image
-                src="/vercel.svg" // Replace with your logo
-                alt="Logo"
-                width={80}
-                height={80}
-                priority={true}
-              />
-            </Link>
-          </div>
-          <nav className="hidden sm:flex space-x-6">
-            {Navbaritems.map((item, key) => (
-              <Link href={item.path} key={key} className="hover:text-yellow-400">
-                {item.title}
-              </Link>
-            ))}
-          </nav>
-          <div className="sm:hidden">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              height="24px" 
-              width="24px" 
-              fill="white"
-              className="hover:cursor-pointer" 
-              onClick={() => setDropdownIsOpen(!dropdownIsOpen)}>
-              <path d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </div>
-        </div>
 
-        {/* Mobile Dropdown */}
-        {dropdownIsOpen && (
-          <div className="sm:hidden flex flex-col bg-blue-800 p-4 space-y-4 text-center">
-            {Navbaritems.map((item, key) => (
-              <Link href={item.path} key={key} className="text-white hover:text-yellow-400">
-                {item.title}
-              </Link>
-            ))}
-          </div>
-        )}
-      </header>
 
       {/* Hero Section */}
       <section className="relative bg-cover bg-center h-screen" style={{ backgroundImage: "url('/hero-background.jpg')" }}>

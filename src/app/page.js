@@ -1,6 +1,5 @@
 'use client';
 import Head from 'next/head'
-import Navbar from '../components/navbar.js'
 import Link from 'next/link'
 import Image from 'next/image.js'
 import CountUp from 'react-countup';
@@ -13,6 +12,9 @@ export default function Home(){
 
     return(
         <>
+        <Head>
+            <title>Exploring French 1 Step at a Time</title>
+        </Head>
         {/* Hero Section */}
       <section className="relative bg-cover bg-center h-screen" style={{ backgroundImage: "url('join us background.jpg')" }}>
         <div className="bg-black bg-opacity-60 h-full flex flex-col justify-center text-center text-white">
